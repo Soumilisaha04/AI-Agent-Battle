@@ -1,13 +1,13 @@
 # AI Agent Battle - Tic-Tac-Toe
 
-## 1. Introduction
+## 1. Introduction :-
 
-This project is based on the AI/ML Laboratory Assignment X_02.
-
+This is my AI/ML Laboratory assignment on "AI Agent Battle using Tic Tac Toe".
+In this project I made two AI agents which play Tic Tac Toe against each other.Both agents using Minimax and Alpha-Beta pruning, but they use different heuristic functions.
+The main purpose of the project is to check how search depth and different heuristics affect the decisions and computation of the AI.
 The aim is not only to create a Tic-Tac-Toe game. The aim is to build two AI agents and study how search depth and heuristic evaluation affect their decisions.
 
-## 2. Technologies Used
-
+## 2. Technologies Used :-
 - Python 3
 - Minimax algorithm
 - Alpha-Beta pruning
@@ -15,10 +15,9 @@ The aim is not only to create a Tic-Tac-Toe game. The aim is to build two AI age
 - Basic Object-Oriented Programming
 - CSV file handling
 - Python `time` module
+And No external Tic-Tac-Toe AI library or Minimax library is used.
 
-No external Tic-Tac-Toe AI library or Minimax library is used.
-
-## 3. Project Structure
+## 3. Project Structure:-
 
 ```text
 ai-agent-battle/
@@ -35,10 +34,24 @@ ai-agent-battle/
 └── README.md
 ```
 
-## 4. Game Engine
+## 4. AI Agents:-
+### NEXUS :
+- Algorithm: Minimax + Alpha-Beta
+- Depth: 3
+- Heuristic: H1
+- Strategy: gives importance to winning lines, center and corners.
+
+### TITAN :
+- Algorithm: Minimax + Alpha-Beta
+- Depth: 3
+- Heuristic: H2
+- Strategy: gives stronger importance to immediate threats and center control.
+
+Both agents are meaningful AI agents. Neither agent is intentionally made random or weak.
+
+## 5. Game Engine :-
 
 `game.py` contains the `TicTacToe` class.
-
 It handles:
 - board
 - valid moves
@@ -47,7 +60,7 @@ It handles:
 - checking draw
 - checking terminal state
 
-## 5. Minimax and Alpha-Beta
+## 6. Minimax and Alpha-Beta :-
 
 `minimax.py` contains the Minimax search.
 
@@ -56,57 +69,30 @@ It handles:
 - A win gets a high positive score.
 - A loss gets a high negative score.
 - A non-terminal position is evaluated using a heuristic.
-
 Alpha-Beta pruning stops searching branches that cannot change the final decision.
-
 The program counts both evaluated nodes and pruned branches.
 
-## 6. AI Agents
-
-### NEXUS
-
-- Algorithm: Minimax + Alpha-Beta
-- Depth: 3
-- Heuristic: H1
-- Strategy: gives importance to winning lines, center and corners.
-
-### TITAN
-
-- Algorithm: Minimax + Alpha-Beta
-- Depth: 3
-- Heuristic: H2
-- Strategy: gives stronger importance to immediate threats and center control.
-
-Both agents are meaningful AI agents. Neither agent is intentionally made random or weak.
-
-## 7. Experiment 1 - Search Depth
+## 7. Experiment 1 - Search Depth :-
 
 The same heuristic and algorithm are used while changing only search depth.
-
 Tested depths:
-
 - Depth 1
 - Depth 2
 - Depth 3
 - Depth 4
-
 The program records:
 - winner
 - nodes evaluated
 - nodes pruned
 - execution time
-
 See `results/depth_experiment.csv`.
 
-## 8. Experiment 2 - Agent Battle
+## 8. Experiment 2 - Agent Battle :-
 
 NEXUS and TITAN play 10 games.
-
 Starting player is alternated:
-
 - Odd games: NEXUS starts
 - Even games: TITAN starts
-
 For every game the program records:
 - game number
 - first player
@@ -117,31 +103,32 @@ For every game the program records:
 - NEXUS pruned nodes
 - TITAN pruned nodes
 - execution time
-
 See `results/results.csv`.
 
-## 9. How to Run
-
-Open a terminal in the project folder and run:
+## 9. How to Run :-
+The program will run both experiments and save the results inside the results folder.
+Open the project folder in VS Code and run or in terminal :
 
 ```bash
 python main.py
 ```
+The program will run both experiments and save the results inside the results folder.
 
-The program automatically performs both experiments and creates the CSV files.
-
-## 10. Observations
+## 10. Observations:-
 
 The exact observations should be based on the generated CSV files because the assignment requires experimental evidence.
+Generally, increasing search depth means that the AI looks further into possible future moves. This can increase the number of nodes evaluated and execution time. The two heuristics can also lead to different move choices because they give different importance to threats, winning lines and board positions.
 
-Generally, increasing search depth means that the AI looks further into possible future moves. This can increase the number of nodes evaluated and execution time.
+In my run:
+NEXUS wins: 0
+TITAN wins: 0
+Draws: 10
+The detailed results are available in the CSV file.
 
-The two heuristics can also lead to different move choices because they give different importance to threats, winning lines and board positions.
-
-## 11. Conclusion
+## 11. Conclusion:-
 
 This project demonstrates how two AI agents can use the same Minimax and Alpha-Beta algorithm while making different decisions because of their heuristic functions.
-
-The experiments also show the trade-off between deeper search and computational cost.
-
+From the depth experiment, I observed that increasing the search depth increases the amount of computation.
+The two agents use different heuristics, so they evaluate board positions differently. In my 10-game experiment, all games ended in draws.
+The main thing I learned from this assignment is how Minimax, Alpha-Beta pruning and heuristic evaluation can be used together to make an AI agent.The experiments also show the trade-off between deeper search and computational cost.
 The final conclusion is based on the actual results generated by the program rather than a predetermined winner.
