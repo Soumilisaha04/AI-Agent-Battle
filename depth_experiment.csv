@@ -1,0 +1,5 @@
+depth,winner,nodes_evaluated,nodes_pruned,time_seconds
+1,DRAW,45,0,0.000128
+2,DRAW,285,0,0.000429
+3,DRAW,941,564,0.001287
+4,DRAW,3286,1291,0.004414
